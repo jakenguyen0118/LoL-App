@@ -5,6 +5,7 @@ const Main = () => {
 
     return (
         <div>
+            Display Champs Here
             <ChampionList />
         </div>
 	)
