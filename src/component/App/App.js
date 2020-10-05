@@ -2,14 +2,16 @@ import React from 'react';
 import './App.scss';
 import Main from '../Main/Main'
 import Banner from '../Banner/Banner'
-import Navbar from '../Navigation/Navigation'
+import Navigation from '../Navigation/Navigation'
+import ScrollArrow from '../ScrollArrow/ScrollArrow'
 
 function App() {
-  return (
+	return (
 		<div className='App'>
 			<Banner />
-			<Navbar />
+			<Navigation />
 			<Main />
+      <ScrollArrow />
 		</div>
 	)
 }
