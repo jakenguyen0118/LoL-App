@@ -50,7 +50,7 @@ const ChampionList = () => {
     
     const showChampion = championList.map(champions => {
         
-        const championImg = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/champion/${champions.name}.png`
+        const championImg = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/champion/${champions.id}.png`
 
         return (
             <div className='champion'>
