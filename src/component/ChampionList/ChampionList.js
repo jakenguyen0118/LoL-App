@@ -1,9 +1,23 @@
 import React, { useState, useEffect } from 'react'
+import './champion-list.scss'
 
 const ChampionList = () => {
 	const [championList, setChampionList] = useState([])
-	const championApi =
-		'http://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion.json'
+    const championApi = 'http://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion.json'
+    
+    useEffect(() => {
+        fetch(championApi)
+            .then((res) => res.json())
+            .then((champion) => {
+                console.log('this is champion', champion.data)
+                let champArr = []
+                for (const champ in champion.data) {
+                    champArr.push(champion.data[champ])
+                }
+                setChampionList(champArr)
+            })
+    }, [])
+	console.log('this is championList', championList)
 
 	// const getChampion = () => {
 	// 	fetch(championApi)
@@ -16,24 +30,6 @@ const ChampionList = () => {
 	//             console.log('riot api data', championList)
 	// 		})
 	// }
-
-	useEffect(() => {
-		fetch(championApi)
-			.then((res) => res.json())
-			.then((champion) => {
-				console.log('this is champion', champion.data)
-				let champArr = []
-				for (const champ in champion.data) {
-					champArr.push(champion.data[champ])
-					// console.log(champ)
-					// setChampionList([...championList, champion.data[champ]])
-				}
-				setChampionList(champArr)
-				// setChampionList(champion.data)
-				// console.log('riot api data', championList)
-			})
-	}, [])
-	console.log('this is championList', championList)
 
 	// setChampionList([...championList, champion.data[champ]]) : setChampionList(champion.data[champ])
 
@@ -50,9 +46,26 @@ const ChampionList = () => {
 	// 			</div>
 	// 		)
 	// 	})
-	// }
+    // }
+    
+    const showChampion = championList.map(champions => {
+        
+        const championImg = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/champion/${champions.name}.png`
 
-	return <div>{/* {showChampion} */}</div>
+        return (
+            <div className='champion'>
+                <h3 className='champ-name'>{champions.name}</h3>
+                <img src={championImg} alt='' />
+                <h3 className='champ-title'>{champions.title}</h3>
+            </div>
+		)
+    })
+
+	return (
+        <div className='champion-container'>
+            {showChampion}
+        </div>
+    )
 }
 
 export default ChampionList
