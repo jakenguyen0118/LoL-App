@@ -2,7 +2,7 @@
 
 ## Project Links
 
-- [repo link](https://github.com/jakenguyen0118/LoL-App)
+- [Repo Link](https://github.com/jakenguyen0118/LoL-App)
 - [Deployment Link](https://jakelolapp.netlify.app/) <-- Only grabbed a deployment url. It'll error for now because it's deploying an empty file.
 
 ## Project Description
@@ -114,9 +114,9 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 | ChampionList | H | 4hr(s) | 0hr(s) | 0hr(s) |
 | Champion | M | 3hr(s) | 0hr(s) | 0hr(s) |
 | Wireframes | H | 2hr(s) | 2hr(s) | 1.5hr(s) |
-| React Architecture | H | 1hr(s) | 0hr(s) | 0hr(s) |
+| React Architecture | H | 1hr(s) | 1hr(s) | 1hr(s) |
 | Review API | H | 2hr(s) | 2hr(s) | 2hr(s) |
-| Total | H | 23hrs| 5hrs | 3.5hrs |
+| Total | H | 23hrs| 6hrs | 4.5hrs |
 
 ## Additional Libraries
 - Sass
