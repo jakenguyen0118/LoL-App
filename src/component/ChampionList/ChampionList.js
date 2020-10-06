@@ -57,6 +57,7 @@ const ChampionList = () => {
                 <h3 className='champ-name'>{champions.name}</h3>
                 <img src={championImg} alt='' />
                 <h3 className='champ-title'>{champions.title}</h3>
+				{/* <p>{champions.blurb}</p> */}
             </div>
 		)
     })

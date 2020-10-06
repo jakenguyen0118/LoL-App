@@ -103,6 +103,7 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 | Main | Holder for ChampionList and Champion. Router will be here as well | 
 | ChampionList | Display all the champion name, title, and picture |
 | Champion | Will show the champions summary and stats when clicked |
+| ScrollArrow | Scroll back to top appear after scrolling a certain distance |
 
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
@@ -120,6 +121,8 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 
 ## Additional Libraries
 - Sass
+- Bootstrap
+- Framer Motion
 
 ## Code Snippet
 
