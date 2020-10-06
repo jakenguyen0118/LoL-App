@@ -5,13 +5,14 @@ import Banner from '../Banner/Banner'
 import Navigation from '../Navigation/Navigation'
 import ScrollArrow from '../ScrollArrow/ScrollArrow'
 
+
 function App() {
 	return (
 		<div className='App'>
 			<Banner />
 			<Navigation />
 			<Main />
-      <ScrollArrow />
+      		<ScrollArrow />
 		</div>
 	)
 }

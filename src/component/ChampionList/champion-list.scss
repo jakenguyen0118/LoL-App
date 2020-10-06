@@ -4,19 +4,31 @@ div.champion-container {
     display: grid;
     grid-template-columns: 2fr 2fr;
     background-color: #1B2845;
-}
+    position: relative;
 
-div.champion {
-	border: 1px white solid;
-    margin: 5px;
-    background-color: #1B2845;
+    div.champion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px white solid;
+        margin: 5px;
+        background-color: #1B2845;
+        padding: 5px;
 
-	img {
-		width: 40%;
-    }
-    
-    h3 {
-        font-family: 'Quicksand', sans-serif;
-        color: white;
+        img {
+            width: 40%;
+            margin: 10px;
+        }
+        
+        h3 {
+            font-family: 'Quicksand', sans-serif;
+            color: white;
+            font-size: 22px;
+        }
+
+        button {
+            margin-bottom: 10px;
+        }
+
     }
 }
