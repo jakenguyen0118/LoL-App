@@ -1,10 +1,31 @@
-div.passive {
-    display: grid;
-    width: 100%;
-    grid-template-rows: 1fr 2fr;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
-    img {
-        width: 25%;
-        justify-self: center;
+div.display-champ {
+    background-color: #1B2845;
+    color: white;
+    padding: 10px;
+    
+    .spell-desc {
+        border: 1px white solid;
+        margin: 8px;
     }
+
+    h3 {
+        font-family: 'Quicksand', sans-serif;
+        margin: 10px;
+    }
+
+    h4 {
+        font-family: 'Quicksand', sans-serif;
+        margin: 8px;
+    }
+
+    p {
+        padding: 5px;
+    }
+
+    p.spell-name {
+        font-size: 20px;
+    }
+    
 }
