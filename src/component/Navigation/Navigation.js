@@ -10,9 +10,7 @@ const Navigation = () => {
 			<Navbar expand='sm' bg='dark' variant='dark' fixed='top'>
 				<Navbar.Brand href='/'>LoL App</Navbar.Brand>
 				<Nav className='mr-auto'>
-					{/* <Nav.Link href='/'>Home</Nav.Link>
-					<Nav.Link href='/features'>Features</Nav.Link>
-					<Nav.Link href='/pricing'>Pricing</Nav.Link> */}
+					{/* <Nav.Link href='/champions'>Champions</Nav.Link> */}
 				</Nav>
 				<Search />
 			</Navbar>
