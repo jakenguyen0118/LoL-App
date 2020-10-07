@@ -35,9 +35,7 @@ const Champion = (props) => {
 
 		return (
 			<div key={champion.id}>
-				<h3>
-					{champion.name}, {champion.title}
-				</h3>
+				<h3 className='champ-name'>{champion.name}, {champion.title}</h3>
 				<img src={championSplash} alt='' />
 				<h4>Stats</h4>
 				<p>insert chart here :D</p>
