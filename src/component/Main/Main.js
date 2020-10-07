@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {Route, Switch} from 'react-router-dom'
 import ChampionList from '../ChampionList/ChampionList'
 import Champion from '../Champion/Champion'
+import Banner from '../Banner/Banner'
 
 const Main = () => {
 
@@ -17,6 +18,7 @@ const Main = () => {
         <>
             <Switch>
                 <Route exact path='/'>
+                    <Banner />
                     <ChampionList />
                 </Route>
                 <Route
