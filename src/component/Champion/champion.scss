@@ -8,6 +8,11 @@ div.display-champ {
     .spell-desc {
         border: 1px white solid;
         margin: 8px;
+
+        img {
+            width: 20%;
+            margin: 5px;
+        }
     }
 
     h3 {
@@ -22,6 +27,7 @@ div.display-champ {
 
     p {
         padding: 5px;
+        margin: 8px;
     }
 
     p.spell-name {

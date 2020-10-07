@@ -6,6 +6,7 @@ import Champion from '../Champion/Champion'
 const Main = () => {
 
     const [champClicked, setChampClicked] = useState(null)
+    console.log(champClicked)
 
     const handleClick = champ => {
         console.log('clicked')
