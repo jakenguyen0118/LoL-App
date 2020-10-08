@@ -12,7 +12,7 @@ const ChampionList = () => {
         fetch(championApi)
             .then((res) => res.json())
             .then((champion) => {
-                console.log('this is champion', champion.data)
+                // console.log('this is champion', champion.data)
                 let champArr = []
                 for (const champ in champion.data) {
                     champArr.push(champion.data[champ])
@@ -20,7 +20,7 @@ const ChampionList = () => {
                 setChampionList(champArr)
             })
     }, [])
-	console.log('this is championList', championList)
+	// console.log('this is championList', championList)
     
     const showChampion = championList.map(champions => {
         

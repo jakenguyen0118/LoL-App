@@ -6,7 +6,9 @@ const Champion = (props) => {
 	const [champ, setChamp] = useState([])
 	const [chartData, setChartData] = useState({})
 
-	console.log('props passed from ChampionList', props)
+	// console.log('state', champ)
+
+	// console.log('props passed from ChampionList', props)
 
 	useEffect(() => {
 		const champion = props.match.params.champ
@@ -15,17 +17,53 @@ const Champion = (props) => {
 		fetch(api)
 			.then((res) => res.json())
 			.then((champs) => {
-				// console.log('champs.data', champs.data)
+				console.log('champs.data', champs.data)
 				let champArr = []
 				for (const champ in champs.data) {
 					champArr.push(champs.data[champ])
 				}
 				setChamp(champArr)
 			})
+		
 	}, [props.match.params.champ])
 
-	// console.log('this is champ', champ)
-	// console.log('this is champ id', champ.id)
+	const chart = () => {
+		const champion = props.match.params.champ
+		const api = `http://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion/${champion}.json`
+
+		fetch(api)
+			.then((res) => res.json())
+			.then((champs) => {
+				console.log('champs.data', champs.data)
+				let champArr = []
+				let champStats = []
+				let statValues = []
+				for (const champ in champs.data) {
+					champArr.push(champs.data[champ])
+					champStats.push(champs.data.[champ].stats)
+					champStats = Object.keys(champStats[0])
+					statValues.push(champs.data[champ].stats)
+					statValues = Object.values(statValues[0])
+				}
+				setChamp(champArr)
+				setChartData({
+					labels: champStats,
+					datasets: [
+						{
+							label: 'Champion Stats',
+							data: statValues,
+							backgroundColor: ['rbga(75, 192, 255, 1'],
+							borderWidth: 4,
+						},
+					],
+				})
+				console.log('this is statValues', statValues)
+			})
+	}
+
+	useEffect(() => {
+		chart()
+	}, [])
 
 	// const chart = () => {
 	// 	setChartData({
@@ -41,11 +79,10 @@ const Champion = (props) => {
 	// 	})
 	// }
 
-	// useEffect(() => {
-	// 	chart()
-	// }, [])
+	
 
 	const displayChamp = champ.map((champion) => {
+		// console.log('champion', champion)
 		const championSplash = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg`
 		const champPassive = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/passive/${champion.passive.image.full}`
 		const champQ = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/spell/${champion.spells[0].image.full}`
@@ -53,24 +90,24 @@ const Champion = (props) => {
 		const champE = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/spell/${champion.spells[2].image.full}`
 		const champR = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/spell/${champion.spells[3].image.full}`
 
-		const stats = Object.keys(champion.stats)
+		// const stats = Object.keys(champion.stats)
 		const values = Object.values(champion.stats)
-		console.log('object key', stats)
+		// console.log('object key', champion.stats)
 		console.log('object values', values)
 
-		const chart = () => {
-			setChartData({
-				labels: stats,
-				datasets: [
-					{
-						label: 'Champion Stats',
-						data: values,
-						backgroundColor: ['rbga(75, 192, 192, 0.6'],
-						borderWidth: 4,
-					},
-				],
-			})
-		}
+		// const chart = () => {
+		// 	setChartData({
+		// 		labels: stats,
+		// 		datasets: [
+		// 			{
+		// 				label: 'Champion Stats',
+		// 				data: values,
+		// 				backgroundColor: ['rbga(75, 192, 192, 0.6'],
+		// 				borderWidth: 4,
+		// 			},
+		// 		],
+		// 	})
+		// }
 
 		return (
 			<div key={champion.id}>
@@ -80,9 +117,9 @@ const Champion = (props) => {
 				<img src={championSplash} alt='' />
 				<h4>Stats</h4>
 				<div>
-					<Radar data={chartData}/>
+					<Radar data={chartData} />
 				</div>
-				<h4>Summary</h4>
+				<h4>Lore</h4>
 				<div className='spell-desc'>
 					<p>{champion.lore}</p>
 				</div>
