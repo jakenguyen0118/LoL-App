@@ -64,14 +64,16 @@ const Champion = (props) => {
 						gridLines: {
 							color: 'rgba(211, 213, 212, 0.3)',
 						},
+
 						ticks: {
 							backdropColor: 'rgba(255, 255, 255, 0)',
 							min: 0,
 							max: 10,
-							stepSize: 1,
+							stepSize: 2,
 						},
+
 						pointLabels: {
-							fontSize: 24,
+							fontSize: 18,
 							fontColor: 'white',
 						}
 					},
@@ -80,7 +82,7 @@ const Champion = (props) => {
 						display: true,
 						text: 'Champion Stats',
 						fontColor: 'white',
-						fontSize: 30,
+						fontSize: 24,
 					},
 				})
 				// console.log('this is champStats', champStats)
@@ -107,14 +109,21 @@ const Champion = (props) => {
 				</h3>
 				<img src={championSplash} alt='' className='splash' />
 				<h4>Stats</h4>
+				<br />
 				<div>
 					<Radar data={chartData} options={chartOption} />
 				</div>
+				<br />
+				<br />
 				<h4>Lore</h4>
+				<br />
 				<div className='lore'>
 					<p>{champion.lore}</p>
 				</div>
+				<br />
+				<br />
 				<h4>Spells</h4>
+				<br />
 				<div className='spells'>
 					<div className='spell-desc'>
 						<h4>Passive</h4>
