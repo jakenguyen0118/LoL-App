@@ -62,11 +62,16 @@ const Champion = (props) => {
 				})
 				setChartOption({
 					scale: {
+						gridLines: {
+							// color: 'rgba(239, 241, 243, 0.5)',
+						},
 						ticks: {
 							backdropColor: 'rgba(255, 255, 255, 0)',
-							// color: 'rgba(255, 255, 255, 0.8)',
-						}
-					}
+							min: 0,
+							max: 10,
+							stepSize: 1,
+						},
+					},
 				})
 				// console.log('this is champStats', champStats)
 				// console.log('this is statValues', statValues)
@@ -97,7 +102,7 @@ const Champion = (props) => {
 					<Radar data={chartData} options={chartOption} />
 				</div>
 				<h4>Lore</h4>
-				<div className='spell-desc'>
+				<div className='lore'>
 					<p>{champion.lore}</p>
 				</div>
 				<h4>Spells</h4>
