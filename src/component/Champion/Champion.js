@@ -17,7 +17,7 @@ const Champion = (props) => {
 		fetch(api)
 			.then((res) => res.json())
 			.then((champs) => {
-				console.log('champs.data', champs.data)
+				// console.log('champs.data', champs.data)
 				let champArr = []
 				for (const champ in champs.data) {
 					champArr.push(champs.data[champ])
@@ -34,7 +34,7 @@ const Champion = (props) => {
 		fetch(api)
 			.then((res) => res.json())
 			.then((champs) => {
-				console.log('champs.data', champs.data)
+				// console.log('champs.data', champs.data)
 				let champArr = []
 				let champStats = []
 				let statValues = []
@@ -52,12 +52,14 @@ const Champion = (props) => {
 						{
 							label: 'Champion Stats',
 							data: statValues,
-							backgroundColor: ['rbga(75, 192, 255, 1'],
-							borderWidth: 4,
+							backgroundColor: 'rgba(155, 192, 255, 1)',
+							pointBackgroundColor: 'rgba(240, 240, 240, 1)',
+							borderWidth: 1,
 						},
 					],
 				})
-				console.log('this is statValues', statValues)
+				// console.log('this is champStats', champStats)
+				// console.log('this is statValues', statValues)
 			})
 	}
 
@@ -65,49 +67,13 @@ const Champion = (props) => {
 		chart()
 	}, [])
 
-	// const chart = () => {
-	// 	setChartData({
-	// 		labels: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'],
-	// 		datasets: [
-	// 			{
-	// 				label: 'level of thiccness',
-	// 				data: [32, 45, 12, 76, 69],
-	// 				backgroundColor: ['rbga(75, 192, 192, 0.6'],
-	// 				borderWidth: 4,
-	// 			},
-	// 		],
-	// 	})
-	// }
-
-	
-
 	const displayChamp = champ.map((champion) => {
-		// console.log('champion', champion)
 		const championSplash = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg`
 		const champPassive = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/passive/${champion.passive.image.full}`
 		const champQ = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/spell/${champion.spells[0].image.full}`
 		const champW = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/spell/${champion.spells[1].image.full}`
 		const champE = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/spell/${champion.spells[2].image.full}`
 		const champR = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/spell/${champion.spells[3].image.full}`
-
-		// const stats = Object.keys(champion.stats)
-		const values = Object.values(champion.stats)
-		// console.log('object key', champion.stats)
-		console.log('object values', values)
-
-		// const chart = () => {
-		// 	setChartData({
-		// 		labels: stats,
-		// 		datasets: [
-		// 			{
-		// 				label: 'Champion Stats',
-		// 				data: values,
-		// 				backgroundColor: ['rbga(75, 192, 192, 0.6'],
-		// 				borderWidth: 4,
-		// 			},
-		// 		],
-		// 	})
-		// }
 
 		return (
 			<div key={champion.id}>
