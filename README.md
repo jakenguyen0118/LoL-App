@@ -14,8 +14,8 @@ I am building this webpage as a React based project for a software engineering i
 - Champions can be clicked on to view their splash art, stats chart, lore, and abilities
 
 # API
-[League of Legends Champions](http://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion.json)
-[Individual Champions Info](http://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion/Aatrox.json)
+- [League of Legends Champions](http://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion.json)
+- [Individual Champions Info](http://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion/Aatrox.json)
 
 # Tools Used
 
