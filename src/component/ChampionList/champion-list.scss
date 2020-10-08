@@ -33,3 +33,26 @@ div.champion-container {
 
     }
 }
+
+@media screen and (min-width:768px) {
+    div.champion-container {
+        div.champion {
+            padding: 20px;
+            height: 300px;
+
+            h3 {
+                font-size: 26px;
+            }
+
+            img {
+                margin: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1024px) {
+    div.champion-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
