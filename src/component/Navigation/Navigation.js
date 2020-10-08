@@ -9,10 +9,6 @@ const Navigation = () => {
 		<>
 			<Navbar expand='sm' bg='dark' variant='dark' fixed='top'>
 				<Navbar.Brand href='/'>LoL App</Navbar.Brand>
-				<Nav className='mr-auto'>
-					{/* <Nav.Link href='/champions'>Champions</Nav.Link> */}
-				</Nav>
-				<Search />
 			</Navbar>
 		</>
 	)
