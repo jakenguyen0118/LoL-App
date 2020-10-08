@@ -5,6 +5,7 @@ import {Radar} from 'react-chartjs-2'
 const Champion = (props) => {
 	const [champ, setChamp] = useState([])
 	const [chartData, setChartData] = useState({})
+	const [chartOption, setChartOption] = useState({})
 
 	// console.log('state', champ)
 
@@ -52,11 +53,20 @@ const Champion = (props) => {
 						{
 							label: 'Champion Stats',
 							data: statValues,
-							backgroundColor: 'rgba(155, 192, 255, 1)',
+							backgroundColor: 'rgba(155, 192, 255, 0.4)',
+							borderColor: 'rgba(160, 190, 255, 0.8)',
 							pointBackgroundColor: 'rgba(240, 240, 240, 1)',
-							borderWidth: 1,
+							borderWidth: 2,
 						},
 					],
+				})
+				setChartOption({
+					scale: {
+						ticks: {
+							backdropColor: 'rgba(255, 255, 255, 0)',
+							// color: 'rgba(255, 255, 255, 0.8)',
+						}
+					}
 				})
 				// console.log('this is champStats', champStats)
 				// console.log('this is statValues', statValues)
@@ -84,7 +94,7 @@ const Champion = (props) => {
 				<img src={championSplash} alt='' />
 				<h4>Stats</h4>
 				<div>
-					<Radar data={chartData} />
+					<Radar data={chartData} options={chartOption} />
 				</div>
 				<h4>Lore</h4>
 				<div className='spell-desc'>
