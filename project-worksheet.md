@@ -82,50 +82,85 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 #### MVP
 - Champion list API
 - Champion specific API
-- Nav(filter) bar
+- Nav bar
 - Styling for mobile, tablet, desktop
 - Champion cards to display champions from API
-- React Graphs for champion stats display
+- ChartJS for champion stats display
 - Sass
-- Filter by their roles (mage, tank, dps, etc)
+- Search filter to direct to champion page
 
 #### PostMVP
-- Learn how to incorporate two APIs instead of just one if I can't figure it out this project.
-- MORE STYLES
+- More styling
+- Framer Motion
 
 ## Components 
 
 | Component | Description | 
 | --- | :---: |  
 | App | Render the Header and Main components| 
-| Header | Banner(landing) | 
-| FilterBar | Filter all the champions by selected params |
+| Banner | Banner(landing) | 
+| Search | Filter and takes you to the searched champion page |
 | Main | Holder for ChampionList and Champion. Router will be here as well | 
 | ChampionList | Display all the champion name, title, and picture |
 | Champion | Will show the champions summary and stats when clicked |
 | ScrollArrow | Scroll back to top appear after scrolling a certain distance |
 
 
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| App | H | 2hr(s) | 0hr(s) | 0hr(s) |
-| Header | L | 2hr(s) | 0hr(s) | 0hr(s) |
-| FilterBar | M | 3hr(s) | 0hr(s) | 0hr(s) |
-| Main | H | 4hr | 0hr(s) | 0hr(s) |
-| ChampionList | H | 4hr(s) | 0hr(s) | 0hr(s) |
-| Champion | M | 3hr(s) | 0hr(s) | 0hr(s) |
+| App | H | 2hr(s) | 1hr(s) | 1hr(s) |
+| Banner | L | 2hr(s) | 1hr(s) | 1hr(s) |
+| Search | M | 3hr(s) | 0hr(s) | 0hr(s) |
+| Main | H | 4hr | 2hr(s) | 2hr(s) |
+| ChampionList | H | 4hr(s) | 4hr(s) | 6hr(s) |
+| Champion | M | 3hr(s) | 3hr(s) | 7hr(s) |
 | Wireframes | H | 2hr(s) | 2hr(s) | 1.5hr(s) |
 | React Architecture | H | 1hr(s) | 1hr(s) | 1hr(s) |
 | Review API | H | 2hr(s) | 2hr(s) | 2hr(s) |
-| Total | H | 23hrs| 6hrs | 4.5hrs |
+| Total | H | 23hrs| 16hrs | 21.5hrs |
 
 ## Additional Libraries
 - Sass
 - Bootstrap
+- ChartJS
 - Framer Motion
 
 ## Code Snippet
 
 ```
+const chart = () => {
+	const champion = props.match.params.champ
+	const api = `http://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion/${champion}.json`
 
+	fetch(api)
+		.then((res) => res.json())
+		.then((champs) => {
+			// console.log('champs.data', champs.data)
+			let champArr = []
+			let champStats = []
+			let statValues = []
+			for (const champ in champs.data) {
+				champArr.push(champs.data[champ])
+				champStats.push(champs.data.[champ].stats)
+				champStats = Object.keys(champStats[0])
+				statValues.push(champs.data[champ].stats)
+				statValues = Object.values(statValues[0])
+			}
+			setChamp(champArr)
+			setChartData({
+				labels: champStats,
+				datasets: [
+					{
+						label: 'Champion Stats',
+						data: statValues,
+						backgroundColor: 'rgba(155, 192, 255, 1)',
+						pointBackgroundColor: 'rgba(240, 240, 240, 1)',
+						borderWidth: 1,
+					},
+				],
+			})
+			// console.log('this is champStats', champStats)
+			// console.log('this is statValues', statValues)
+		})
+}
 ```
