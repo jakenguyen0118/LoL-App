@@ -13,7 +13,7 @@ const Champion = (props) => {
 
 	useEffect(() => {
 		const champion = props.match.params.champ
-		const api = `http://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion/${champion}.json`
+		const api = `https://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion/${champion}.json`
 
 		fetch(api)
 			.then((res) => res.json())
@@ -30,7 +30,7 @@ const Champion = (props) => {
 
 	const chart = () => {
 		const champion = props.match.params.champ
-		const api = `http://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion/${champion}.json`
+		const api = `https://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion/${champion}.json`
 
 		fetch(api)
 			.then((res) => res.json())
@@ -84,12 +84,12 @@ const Champion = (props) => {
 	}, [])
 
 	const displayChamp = champ.map((champion) => {
-		const championSplash = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg`
-		const champPassive = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/passive/${champion.passive.image.full}`
-		const champQ = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/spell/${champion.spells[0].image.full}`
-		const champW = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/spell/${champion.spells[1].image.full}`
-		const champE = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/spell/${champion.spells[2].image.full}`
-		const champR = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/spell/${champion.spells[3].image.full}`
+		const championSplash = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg`
+		const champPassive = `https://ddragon.leagueoflegends.com/cdn/10.20.1/img/passive/${champion.passive.image.full}`
+		const champQ = `https://ddragon.leagueoflegends.com/cdn/10.20.1/img/spell/${champion.spells[0].image.full}`
+		const champW = `https://ddragon.leagueoflegends.com/cdn/10.20.1/img/spell/${champion.spells[1].image.full}`
+		const champE = `https://ddragon.leagueoflegends.com/cdn/10.20.1/img/spell/${champion.spells[2].image.full}`
+		const champR = `https://ddragon.leagueoflegends.com/cdn/10.20.1/img/spell/${champion.spells[3].image.full}`
 
 		return (
 			<div key={champion.id}>

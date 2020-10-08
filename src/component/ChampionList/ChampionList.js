@@ -24,7 +24,7 @@ const ChampionList = () => {
     
     const showChampion = championList.map(champions => {
         
-        const championImg = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/champion/${champions.id}.png`
+        const championImg = `https://ddragon.leagueoflegends.com/cdn/10.20.1/img/champion/${champions.id}.png`
 
         return (
 			<Link to={'/champions/' + champions.id}>
