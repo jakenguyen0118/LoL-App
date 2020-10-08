@@ -52,7 +52,7 @@ const Champion = (props) => {
 						{
 							label: 'Champion Stats',
 							data: statValues,
-							backgroundColor: 'rgba(155, 192, 255, 0.4)',
+							backgroundColor: 'rgba(179, 255, 252, 0.7)',
 							borderColor: 'rgba(160, 190, 255, 0.8)',
 							pointBackgroundColor: 'rgba(240, 240, 240, 1)',
 							borderWidth: 2,
@@ -62,7 +62,7 @@ const Champion = (props) => {
 				setChartOption({
 					scale: {
 						gridLines: {
-							// color: 'rgba(239, 241, 243, 0.5)',
+							color: 'rgba(211, 213, 212, 0.3)',
 						},
 						ticks: {
 							backdropColor: 'rgba(255, 255, 255, 0)',
@@ -70,6 +70,17 @@ const Champion = (props) => {
 							max: 10,
 							stepSize: 1,
 						},
+						pointLabels: {
+							fontSize: 24,
+							fontColor: 'white',
+						}
+					},
+
+					title: {
+						display: true,
+						text: 'Champion Stats',
+						fontColor: 'white',
+						fontSize: 30,
 					},
 				})
 				// console.log('this is champStats', champStats)
@@ -94,7 +105,7 @@ const Champion = (props) => {
 				<h3 className='champ-name'>
 					{champion.name}, {champion.title}
 				</h3>
-				<img src={championSplash} alt='' />
+				<img src={championSplash} alt='' className='splash' />
 				<h4>Stats</h4>
 				<div>
 					<Radar data={chartData} options={chartOption} />

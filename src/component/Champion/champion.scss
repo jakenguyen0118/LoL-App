@@ -50,6 +50,10 @@ div.display-champ {
     p.spell-name {
         font-size: 20px;
     }
+
+    .splash {
+        padding: 8px;
+    }
     
 }
 
@@ -103,6 +107,24 @@ div.display-champ {
 
         p.spell-name {
             font-size: 30px;
+        }
+
+        div.spells {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 1fr;
+
+            .spell-desc:first-child {
+                grid-column: 1/2;
+                grid-row: 1/2;
+
+                h4 {
+                    margin-bottom: 8px;
+                }
+
+                img {
+                    width: 20%;
+                }
+            }
         }
     }
 }

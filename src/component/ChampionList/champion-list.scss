@@ -62,3 +62,9 @@ div.champion-container {
         grid-template-columns: repeat(4, 1fr);
     }
 }
+
+@media screen and (min-width:1440px) {
+    div.champion-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
