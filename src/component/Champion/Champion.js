@@ -40,9 +40,9 @@ const Champion = (props) => {
 				let statValues = []
 				for (const champ in champs.data) {
 					champArr.push(champs.data[champ])
-					champStats.push(champs.data.[champ].stats)
+					champStats.push(champs.data.[champ].info)
 					champStats = Object.keys(champStats[0])
-					statValues.push(champs.data[champ].stats)
+					statValues.push(champs.data[champ].info)
 					statValues = Object.values(statValues[0])
 				}
 				setChamp(champArr)
@@ -61,6 +61,7 @@ const Champion = (props) => {
 				// console.log('this is champStats', champStats)
 				// console.log('this is statValues', statValues)
 			})
+
 	}
 
 	useEffect(() => {
