@@ -6,27 +6,27 @@ import './champion-list.scss'
 
 const ChampionList = () => {
 	const [championList, setChampionList] = useState([])
-	const championApi = 'http://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion.json'
+	const championApi =
+		'https://ddragon.leagueoflegends.com/cdn/10.20.1/data/en_US/champion.json'
 
-    useEffect(() => {
-        fetch(championApi)
-            .then((res) => res.json())
-            .then((champion) => {
-                // console.log('this is champion', champion.data)
-                let champArr = []
-                for (const champ in champion.data) {
-                    champArr.push(champion.data[champ])
-                }
-                setChampionList(champArr)
-            })
-    }, [])
+	useEffect(() => {
+		fetch(championApi)
+			.then((res) => res.json())
+			.then((champion) => {
+				// console.log('this is champion', champion.data)
+				let champArr = []
+				for (const champ in champion.data) {
+					champArr.push(champion.data[champ])
+				}
+				setChampionList(champArr)
+			})
+	}, [])
 	// console.log('this is championList', championList)
-    
-    const showChampion = championList.map(champions => {
-        
-        const championImg = `https://ddragon.leagueoflegends.com/cdn/10.20.1/img/champion/${champions.id}.png`
 
-        return (
+	const showChampion = championList.map((champions) => {
+		const championImg = `https://ddragon.leagueoflegends.com/cdn/10.20.1/img/champion/${champions.id}.png`
+
+		return (
 			<Link to={'/champions/' + champions.id}>
 				<div className='champion' key={champions.id}>
 					<h3>{champions.name}</h3>
@@ -35,13 +35,9 @@ const ChampionList = () => {
 				</div>
 			</Link>
 		)
-    })
+	})
 
-	return (
-		<div className='champion-container'>
-			{showChampion}
-		</div>
-	)
+	return <div className='champion-container'>{showChampion}</div>
 }
 
 export default ChampionList

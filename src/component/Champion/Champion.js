@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './champion.scss'
-import {Radar} from 'react-chartjs-2'
+import { Radar } from 'react-chartjs-2'
 
 const Champion = (props) => {
 	const [champ, setChamp] = useState([])
@@ -25,7 +25,6 @@ const Champion = (props) => {
 				}
 				setChamp(champArr)
 			})
-		
 	}, [props.match.params.champ])
 
 	const chart = () => {
@@ -41,7 +40,7 @@ const Champion = (props) => {
 				let statValues = []
 				for (const champ in champs.data) {
 					champArr.push(champs.data[champ])
-					champStats.push(champs.data.[champ].info)
+					champStats.push(champs.data[champ].info)
 					champStats = Object.keys(champStats[0])
 					statValues.push(champs.data[champ].info)
 					statValues = Object.values(statValues[0])
@@ -76,7 +75,6 @@ const Champion = (props) => {
 				// console.log('this is champStats', champStats)
 				// console.log('this is statValues', statValues)
 			})
-
 	}
 
 	useEffect(() => {
@@ -142,11 +140,7 @@ const Champion = (props) => {
 		)
 	})
 
-	return (
-		<div className='display-champ'>
-			{displayChamp}
-		</div>
-	)
+	return <div className='display-champ'>{displayChamp}</div>
 }
 
 export default Champion
