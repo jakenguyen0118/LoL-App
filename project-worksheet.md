@@ -110,20 +110,18 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 | --- | :---: |  :---: | :---: | :---: |
 | App | H | 2hr(s) | 1hr(s) | 1hr(s) |
 | Banner | L | 2hr(s) | 1hr(s) | 1hr(s) |
-| Search | M | 3hr(s) | 0hr(s) | 0hr(s) |
 | Main | H | 4hr | 2hr(s) | 2hr(s) |
 | ChampionList | H | 4hr(s) | 4hr(s) | 6hr(s) |
 | Champion | M | 3hr(s) | 3hr(s) | 7hr(s) |
 | Wireframes | H | 2hr(s) | 2hr(s) | 1.5hr(s) |
 | React Architecture | H | 1hr(s) | 1hr(s) | 1hr(s) |
 | Review API | H | 2hr(s) | 2hr(s) | 2hr(s) |
-| Total | H | 23hrs| 16hrs | 21.5hrs |
+| Total | H | 20hrs| 16hrs | 21.5hrs |
 
 ## Additional Libraries
 - Sass
 - Bootstrap
 - ChartJS
-- Framer Motion
 
 ## Code Snippet
 
